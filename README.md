@@ -1,6 +1,6 @@
 # danger-prettier
 
-A description of danger-prettier.
+Ensure files have been formatted with [Prettier](https://prettier.io/)
 
 ## Installation
 
@@ -9,8 +9,6 @@ This is currently an unpublished gem!
     $ gem install danger-prettier
 
 ## Usage
-
-Ensure files have been formatted with [Prettier](https://prettier.io/)
 
 <blockquote>Ensure files have been formatted
   <pre>
