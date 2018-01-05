@@ -14,13 +14,19 @@ module Danger
   #
   # @example Supply custom path to executable and config file
   #
-  #          prettier.config_file = path/to/.prettierrc.json
-  #          prettier.executable_path = path/to/bin/prettier
+  #          prettier.config_file = "path/to/.prettierrc.json"
+  #          prettier.executable_path = "path/to/bin/prettier"
   #          prettier.check
   #
   # @example Supply custom file regex
   #
   #          prettier.file_regex = /\.jsx?$/
+  #          prettier.check
+  #
+  # @example Use prettier-eslint
+  #
+  #          prettier.executable_path = "./node_modules/.bin/prettier-eslint"
+  #          prettier.additional_args = "--eslint-config-path .eslintrc --prettier-last"
   #          prettier.check
   #
   # @see  roverdotcom/danger-prettier
@@ -42,6 +48,10 @@ module Danger
     # Enable file filtering-only show messages within changed files.
     # @return [Boolean]
     attr_accessor :filtering
+
+    # Additional arguments to the prettier command
+    # @return [Boolean]
+    attr_accessor :additional_args
 
     # Checks javascript files for Prettier compliance.
     # Generates `errors` based on file differences from prettier.
@@ -96,6 +106,7 @@ module Danger
     def run_check(bin, file)
       command = "#{bin} --list-different"
       command << " --config #{config_file}" if config_file
+      command << " #{additional_args}" if additional_args
       result = `#{command} #{file}`
       result
     end

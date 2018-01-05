@@ -23,14 +23,21 @@ prettier.check</pre>
 
 <blockquote>Supply custom path to executable and config file
   <pre>
-prettier.config_file = path/to/.prettierrc.json
-prettier.executable_path = path/to/bin/prettier
+prettier.config_file = "path/to/.prettierrc.json"
+prettier.executable_path = "path/to/bin/prettier"
 prettier.check</pre>
 </blockquote>
 
 <blockquote>Supply custom file regex
   <pre>
 prettier.file_regex = /\.jsx?$/
+prettier.check</pre>
+</blockquote>
+
+<blockquote>Use prettier-eslint
+  <pre>
+prettier.executable_path = "./node_modules/.bin/prettier-eslint"
+prettier.additional_args = "--eslint-config-path .eslintrc --prettier-last"
 prettier.check</pre>
 </blockquote>
 
@@ -43,6 +50,8 @@ prettier.check</pre>
 `file_regex` - File matching regex
 
 `filtering` - Enable file filtering-only show messages within changed files.
+
+`additional_args` - Additional arguments to the prettier command
 
 #### Methods
 
