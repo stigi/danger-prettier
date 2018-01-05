@@ -4,6 +4,8 @@ A description of danger-prettier.
 
 ## Installation
 
+This is currently an unpublished gem!
+
     $ gem install danger-prettier
 
 ## Usage

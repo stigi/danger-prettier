@@ -23,7 +23,7 @@ module Danger
   #          prettier.file_regex = /\.jsx?$/
   #          prettier.check
   #
-  # @see  Jacob Friedmann/danger-prettier
+  # @see  roverdotcom/danger-prettier
   # @tags lint, prettier, javascript, css
   #
   class DangerPrettier < Plugin
@@ -68,7 +68,7 @@ module Danger
     #
     # return [String]
     def matching_file_regex
-      file_regex ? file_regex : /.js$/
+      file_regex ? file_regex : /\.js$/
     end
 
     # Get lint result regards the filtering option
