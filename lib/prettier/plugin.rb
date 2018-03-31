@@ -1,5 +1,3 @@
-require "mkmf"
-
 module Danger
   # Ensure files have been formatted with [Prettier](https://prettier.io/)
   #
@@ -71,7 +69,7 @@ module Danger
     # return [String]
     def prettier_path
       local = executable_path ? executable_path : "./node_modules/.bin/prettier"
-      File.exist?(local) ? local : find_executable("prettier")
+      File.exist?(local) ? local : "prettier"
     end
 
     # Get prettier' file pattern regex
