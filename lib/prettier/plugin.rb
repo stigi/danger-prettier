@@ -105,7 +105,7 @@ module Danger
       command = "#{bin} --list-different"
       command << " --config #{config_file}" if config_file
       command << " #{additional_args}" if additional_args
-      result = `#{command} #{file}`
+      result = `#{command} #{file}`.split("\n")
       result
     end
 
